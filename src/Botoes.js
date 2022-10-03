@@ -6,9 +6,9 @@ export default function Botoes(props) {
   return (
     <ContainerBotoes>
         
-      <button onClick={()=> addRespondidos(idCard)} >Não lembrei</button>
-      <button >Quase não lembrei</button>
-      <button >Zap!</button>
+      <button onClick={()=> addRespondidos(idCard,'erro')} >Não lembrei</button>
+      <button onClick={()=> addRespondidos(idCard,'meio')}>Quase não lembrei</button>
+      <button onClick={()=> addRespondidos(idCard,'acerto')}>Zap!</button>
     </ContainerBotoes>
   );
 }
