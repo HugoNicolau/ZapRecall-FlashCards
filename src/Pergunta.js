@@ -10,7 +10,7 @@ import iconAcerto from "./assets/img/icone_certo.png";
 export default function Pergunta(props) {
   const { perguntacard, addRespondidos } = props;
   const [cliquei, setCliquei] = React.useState(0);
-  console.log(perguntacard, "perguntacardddd");
+  
 
   function clicarPergunta() {
     const addCliquei = (cliquei + 1) % 4;
@@ -19,16 +19,17 @@ export default function Pergunta(props) {
 
   if (cliquei === 0) {
     return (
-      <Fechada onClick={() => clicarPergunta()} idCard={perguntacard.id}>
-        <p>Pergunta {perguntacard.id}</p>
-        <img src={setaplay} alt="setaplay" />
+      <Fechada data-identifier="flashcard" onClick={() => clicarPergunta()} idCard={perguntacard.id}>
+        <p data-identifier="flashcard-index-item">Pergunta {perguntacard.id}</p>
+        <img src={setaplay} alt="setaplay" data-identifier="flashcard-show-btn"/>
       </Fechada>
     );
   } else if (cliquei === 1) {
     return (
-      <Aberta>
-        <p>{perguntacard.Q}</p>
+      <Aberta >
+        <p data-identifier="flashcard-question">{perguntacard.Q}</p>
         <img
+        data-identifier="flashcard-turn-btn"
           src={setavirar}
           onClick={() => {
             clicarPergunta();
@@ -40,7 +41,7 @@ export default function Pergunta(props) {
   } else if (cliquei === 2) {
     return (
       <Resposta onClick={() => clicarPergunta()}>
-        <p>{perguntacard.R}</p>
+        <p data-identifier="flashcard-answer">{perguntacard.R}</p>
         <div>
           <Botoes idCard={perguntacard.id} addRespondidos={addRespondidos} />
         </div>
@@ -51,7 +52,7 @@ export default function Pergunta(props) {
       return (
         <Respondida idCard={perguntacard.id} estado="erro">
           <p>Pergunta {perguntacard.id}</p>
-          <img src={iconErro} alt="iconErro" />
+          <img data-identifier="flashcard-status" src={iconErro} alt="iconErro" />
         </Respondida>
       );
     }
@@ -59,7 +60,7 @@ export default function Pergunta(props) {
       return (
         <Respondida idCard={perguntacard.id} estado="meio">
           <p>Pergunta {perguntacard.id}</p>
-          <img src={iconMeio} alt="iconMeio" />
+          <img data-identifier="flashcard-status" src={iconMeio} alt="iconMeio" />
         </Respondida>
       );
     }
@@ -67,7 +68,7 @@ export default function Pergunta(props) {
       return (
         <Respondida idCard={perguntacard.id} estado="acerto">
           <p>Pergunta {perguntacard.id}</p>
-          <img src={iconAcerto} alt="iconAcerto" />
+          <img data-identifier="flashcard-status" src={iconAcerto} alt="iconAcerto" />
         </Respondida>
       );
     }

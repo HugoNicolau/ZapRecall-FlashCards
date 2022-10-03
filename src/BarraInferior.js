@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import Botoes from "./Botoes";
 import perguntas from "./mock";
 
 export default function BarraInferior(props){
@@ -8,7 +7,7 @@ export default function BarraInferior(props){
     return(
         <Footer>
         
-        <div> {concluidas}/{perguntas.length} CONCLUÍDOS</div>
+        <div data-identifier="flashcard-counter"> {concluidas}/{perguntas.length} CONCLUÍDOS</div>
       </Footer>
     )
 }
