@@ -13,27 +13,6 @@ export default function Botoes(props) {
   );
 }
 
-// const Botao = styled.button`
-
-
-//     width: 90px;
-//     font-family: "Recursive";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 12px;
-//     line-height: 14px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     text-align: center;
-//     color: #ffffff;
-//     background: ${props => props.id === 1 ? "#ff3030" : (props.id === 2 ? "#ff922e" : "#2fbe34")};
-
-//     border-radius: 5px;
-//     border: 1px solid ${props => props.id === 1 ? "#ff3030" : (props.id === 2 ? "#ff922e" : "#2fbe34")};
-//     padding: 5px;
-
-// `
 
 const ContainerBotoes = styled.div`
   display: flex;
@@ -56,6 +35,7 @@ const ContainerBotoes = styled.div`
     border-radius: 5px;
     border: 1px solid blue;
     padding: 5px;
+    cursor:pointer;
     
 
     &:nth-child(1) {

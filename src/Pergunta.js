@@ -109,6 +109,7 @@ const Fechada = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor:pointer;
 
   p {
     font-family: "Recursive";
@@ -145,6 +146,7 @@ const Aberta = styled.div`
     position: absolute;
     bottom: 10px;
     right: 10px;
+    cursor:pointer;
   }
 `;
 

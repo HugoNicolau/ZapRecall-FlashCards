@@ -15,7 +15,7 @@ export default function TelaExtra({ setTela }) {
 }
 
 const TelaInicial = styled.div`
-  padding-top: 50%;
+  padding-top: 15%;
   background-color: #fb6b6b;
   width: 100vw;
   min-height: 100vh;
@@ -52,5 +52,6 @@ const TelaInicial = styled.div`
     border: 1px solid #d70900;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
+    cursor:pointer;
   }
 `;

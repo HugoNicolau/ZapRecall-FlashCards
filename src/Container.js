@@ -16,8 +16,8 @@ export default function Container() {
   return (
     <Screen>
       <Logo>
-        <img src={logo} alt="imagem do logo" />
-        <h1>ZapRecall</h1>
+        <img src={logo} alt="imagem do logo" onClick={()=> window.location.reload(false)} />
+        <h1 onClick={()=> window.location.reload(false)}>ZapRecall</h1>
       </Logo>
 
     <Perguntas concluiQuestao={concluiQuestao}/>
@@ -47,9 +47,11 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   margin: 40px 0 20px 0;
+  cursor:pointer;
 
 img {
   width: 52px;
+  cursor:pointer;
 }
 
 h1 {
@@ -60,6 +62,7 @@ h1 {
   line-height: 45px;
   color: #FFFFFF;
   margin-left: 20px;
+  cursor:pointer;
 }
 
 `
