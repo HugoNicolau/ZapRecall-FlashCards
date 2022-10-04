@@ -1,13 +1,21 @@
 import styled from "styled-components"
 import perguntas from "./mock";
+import MarcaAcertos from "./ MarcaAcertos";
+
+
 
 export default function BarraInferior(props){
-  const {concluidas} = props;
-
+  const {concluidas, arrConc} = props;
+  
     return(
         <Footer>
         
         <div data-identifier="flashcard-counter"> {concluidas}/{perguntas.length} CONCLUÍDOS</div>
+
+        <Acertos>
+        {arrConc.map((a, index)=> <MarcaAcertos key={index} states={a.states}/>)}
+        </Acertos>
+        
       </Footer>
     )
 }
@@ -28,4 +36,10 @@ const Footer = styled.div`
   color: #333333;
   padding: 10px;
 `;
+
+const Acertos = styled.div`
+    
+    display:flex;
+    flex-direction: row;
+  `
 

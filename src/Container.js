@@ -7,10 +7,12 @@ import Perguntas from "./Perguntas"
 export default function Container() {
 
   const [concluidas, setConcluidas] = React.useState(0)
+  const [arrConc, setArrConc] = React.useState([])
 
   function concluiQuestao(){
     const novoNum = concluidas+1;
     setConcluidas(novoNum)
+    
   }
     
   return (
@@ -20,10 +22,10 @@ export default function Container() {
         <h1 onClick={()=> window.location.reload(false)}>ZapRecall</h1>
       </Logo>
 
-    <Perguntas concluiQuestao={concluiQuestao}/>
+    <Perguntas concluiQuestao={concluiQuestao} setArrConc={setArrConc} arrConc={arrConc}/>
 
 
-      <BarraInferior concluidas={concluidas}/>
+      <BarraInferior concluidas={concluidas} arrConc={arrConc}/>
     </Screen>
   );
 }

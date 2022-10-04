@@ -2,21 +2,26 @@ import Pergunta from "./Pergunta";
 import perguntas from "./mock";
 import React from "react";
 
+
+
 export default function Perguntas(props) {
-  const { concluiQuestao } = props;
+  const { concluiQuestao, setArrConc, arrConc } = props;
   
   const [respondidos, setRespondidos] = React.useState([{}]);
-  const [questoes, setQuestoes] = React.useState(perguntas);
+  const questoes = perguntas
 
   function addRespondidos(numCard, estado) {
    
     const novoArray = [...respondidos, { id: numCard, states: estado }];
+    const novoArrayConc = [...arrConc, {states: estado}];
+    setArrConc(novoArrayConc);
     setRespondidos(novoArray);
     concluiQuestao();
     
-    questoes.forEach( (q)=> {q.id===numCard ? q.states =estado : console.log("")})
+    questoes.forEach( (q)=> {(q.id===numCard) && (q.states = estado) })
   }
 
+  
   return (
     <>
       
@@ -24,6 +29,8 @@ export default function Perguntas(props) {
         
         <Pergunta  key={p.id} perguntacard={p} addRespondidos={addRespondidos} states={p.states}/>
       ))}
+
+      
     </>
   );
 }
