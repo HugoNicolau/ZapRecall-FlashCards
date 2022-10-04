@@ -14,7 +14,7 @@ export default function Perguntas(props) {
     setRespondidos(novoArray);
     concluiQuestao();
     
-    questoes.forEach( (q)=> {q.id===numCard ? q.states =estado : console.log("oi")})
+    questoes.forEach( (q)=> {q.id===numCard ? q.states =estado : console.log("")})
   }
 
   return (
