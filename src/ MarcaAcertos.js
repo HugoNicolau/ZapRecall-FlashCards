@@ -16,6 +16,8 @@ export default function MarcaAcertos(props) {
       ) : (
         <p></p>
       )}
+
+      
     </>
   );
 }
